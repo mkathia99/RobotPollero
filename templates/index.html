@@ -1,0 +1,78 @@
+<!-- index.html actualizado con cámara, parámetros, botones manuales y decoración -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Robot_pollito - Cámara Futurista</title>
+    <!-- Enlace a archivo de estilos -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Enlace a script con defer para que cargue después del DOM -->
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+    <!-- Encabezado principal -->
+    <header>
+        BIENVENIDO AL PANEL DE CONTROL ROBOT POLLITO
+    </header>
+
+    <!-- Nombres de los integrantes -->
+    <div class="integrantes">
+        Mariakathia, Lissette, Gonzalo, Paolo, Anthony
+    </div>
+
+    <!-- Contenedor general de los paneles -->
+    <div class="container">
+
+        <!-- Panel de cámara en vivo -->
+        <div class="panel video">
+            <h3>CÁMARA EN VIVO</h3>
+            <!-- Imagen de video streaming desde Flask -->
+            <img src="{{ url_for('video') }}" alt="Cámara en vivo">
+            <div class="status" id="estadoConexion">🟢 Conectado</div>
+        </div>
+
+        <!-- Panel de parámetros del sistema -->
+        <div class="panel parametros">
+            <h2>PARÁMETROS EN TIEMPO REAL</h2>
+            <p id="rpm1">RPM M1: --</p>
+            <p id="rpm2">RPM M2: --</p>
+            <p id="rpm3">RPM M3: --</p>
+            <p id="rpm4">RPM M4: --</p>
+            <p id="voltaje">Voltaje Batería: --</p>
+            <p id="modo">Modo: --</p>
+            <p id="movimiento">Movimiento: --</p>
+            <p id="accion">Acción: --</p>
+        </div>
+    </div>
+
+    <div class="controles-manuales">
+        <div class="control-grid">
+            <div></div>
+            <button id="btn-up" class="boton-direccion">&#8593;</button>
+            <div></div>
+            <button id="btn-left" class="boton-direccion">&#8592;</button>
+            <button id="btn-stop" class="boton-stop">&#128308;</button>
+            <button id="btn-right" class="boton-direccion">&#8594;</button>
+            <div></div>
+            <button id="btn-down" class="boton-direccion">&#8595;</button>
+            <div></div>
+        </div>
+    </div>
+
+       <div class="botones-extra">
+         <button id="btn-encender" class="boton-extra">🔌 Encender</button>
+         <button id="btn-modo" class="boton-extra">🤖 Modo: Manual</button>
+     </div>
+
+
+    <!-- Imagen decorativa de robot -->
+    <div class="decoracion">
+        <img src="/static/robot2.jpeg" alt="Decoración Robot">
+    </div>
+
+    <!-- Logo flotante superior -->
+    <div class="logo">
+        <img src="/static/logo4.png" alt="Logo">
+    </div>
+</body>
+</html>
