@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenido - Robot Pollito</title>
+    <!-- Importa tu CSS global para mantener el estilo -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+      /* Caja de bienvenida centrada y decorada */
+      .bienvenida-box {
+        background: rgba(0,0,0,0.82);
+        border-radius: 18px;
+        padding: 35px;
+        margin: 60px auto 0 auto;
+        max-width: 520px;
+        box-shadow: 0 0 38px #ff4500a7;
+        color: #ffd500;
+        text-align: center;
+      }
+      .bienvenida-box img {
+        width: 100px; height: auto; margin-bottom: 18px;
+      }
+      .bienvenida-box h1 { font-family: 'Orbitron', sans-serif; margin-bottom: 16px;}
+      .bienvenida-box p { font-size: 18px; margin-bottom: 18px;}
+      .form-login input {
+        display: block;
+        margin: 10px auto;
+        padding: 10px;
+        width: 80%;
+        border-radius: 10px;
+        border: 2px solid #ffd500;
+        background: #222;
+        color: #ffd500;
+        font-size: 18px;
+        outline: none;
+        transition: border 0.2s;
+      }
+      .form-login input:focus { border: 2px solid #ff4500; }
+      .form-login button {
+        padding: 10px 30px;
+        border-radius: 10px;
+        background: #ff4500;
+        color: white;
+        font-weight: bold;
+        font-size: 19px;
+        border: none;
+        cursor: pointer;
+        margin-top: 8px;
+        transition: background 0.2s;
+      }
+      .form-login button:hover { background: #ffd500; color: #222;}
+    </style>
+</head>
+<body>
+  <!-- Caja centrada de bienvenida y login -->
+  <div class="bienvenida-box">
+    <!-- Logo del robot -->
+    <img src="{{ url_for('static', filename='logo4.png') }}" alt="Logo Robot Pollito">
+    <h1>¡Hola soy ...!</h1>
+    <p>
+       Soy una robot que .. .<br>
+      .............................................<br><br>
+      <b> estoy esch(a)</b> .....................................................
+    </p>
+    <!-- Si tienes un video introdutorio, colócalo en static/intro_robot.mp4 y descomenta esta línea -->
+    <!-- <video src="{{ url_for('static', filename='intro_robot.mp4') }}" controls width="300"></video> -->
+    <!-- Formulario de login -->
+    <form class="form-login" method="post" action="/">
+      <input type="text" name="usuario" placeholder="Usuario" required>
+      <input type="password" name="password" placeholder="Contraseña" required>
+      <button type="submit">Ingresar</button>
+    </form>
+    <!-- Si hay error, se muestra -->
+    {% if error %}
+      <p style="color: #ff2323;">{{ error }}</p>
+    {% endif %}
+  </div>
+</body>
+</html>

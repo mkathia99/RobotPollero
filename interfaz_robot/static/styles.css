@@ -1,0 +1,258 @@
+  /*styles.css*/
+  body {
+    margin: 0;
+     font-family: 'Segoe UI', sans-serif;
+     background: url("/static/robot1.jpg") no-repeat center center fixed;
+     background-size: cover;
+     color: #ff4500;
+     } 
+
+      header {
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 15px;
+    text-align: center;
+    color: #ffd500; 
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Orbitron', sans-serif; /* Fuente estilo futurista */
+    box-shadow: 1 4px 25px rgba(22, 20, 20, 0.8);
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 6px rgba(128, 11, 11, 0.8);
+}
+
+        .integrantes {
+            text-align: center;
+            margin-top: 15px;
+            color: #ffb300;
+            font-size: 20px;
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0px 2px 2px rgba(10, 1, 1, 0.747);
+        }
+
+        .container {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 3px;
+              justify-content: space-between;
+              align-items: flex-start;
+              padding: 3px;
+        }
+
+        /* Panel CÁMARA EN VIVO */
+        .panel.video {
+            background-color: rgba(0, 0, 0, 0.4);
+            border: 5px ridge #ffa500; /*ancho, forma, y color de borde del panel de camara en vivo*/
+            border-radius: 3px; /*forma de panel*/
+            box-shadow: 0 0 35px #ff8c00aa;
+            padding: 20px;
+            max-width: 1300px;
+            flex: 1;
+        }
+
+        /* Panel PARÁMETROS EN TIEMPO REAL */
+        .panel.parametros {
+            background-color: rgba(0, 0, 0, 0.24);
+            border: 5px ridge #ff6347;
+            border-radius: 3px;
+            box-shadow: 0 0 20px #ff440067;
+            padding: 20px;
+            max-width: 30px;
+            height: 50px;  
+            min-height: 10px;
+            flex: auto;
+        }
+         /*Encabezado camara*/
+        .panel h3 {
+            color: #ff4500; /* color de letra */ 
+            border-bottom: 2px solid #ff4500; /*ancho de linea, forma, color*/
+            padding-bottom: 1px; /*espacio en letra y barra*/
+            font-size: 20px; /*tamaño de letra*/
+            margin-bottom: 7px;
+        }
+        .panel h2 {
+            color: #ff4500;
+            border-bottom: 2px solid #ff4500;
+            padding-bottom: 4px;
+            font-size: 15px;
+            margin-bottom: 7px;
+        }
+
+        .video img {
+            width: 100%;
+            max-width: 1300px;
+            height: 650px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 2px solid #ffbf00;
+            box-shadow: 0 0 30px #ff4500bb;
+        }
+
+        .status {
+            text-align: left;
+            font-size: 14px;
+            margin-top: 10px;
+            color: limegreen;
+        }
+
+        .parametros p {
+            margin: 8px 0;
+            font-size: 15px;
+            color: #ff6347;
+        }
+        .panel.parametros{
+        flex-grow: 0.5;
+        max-width: 320px;
+        min-height: 5px; /*margen del panel altura*/
+        height: auto;
+        }
+
+        .decoracion {
+        position: absolute;
+        bottom: 41px;
+        right: 45px;
+        z-index: 0;
+        }
+         
+
+        .decoracion img {
+         width: auto;
+         height: 150px;
+         opacity: 0.95;
+         filter: drop-shadow(0 0 6px #ffb300);
+        }
+
+        .logo {
+        position: absolute;
+        bottom: 855px;
+        right: 1270px;
+        z-index: 0;
+        }
+         
+
+        .logo img {
+         width: auto;
+         height: 75px;
+         opacity: 0.95;
+         filter: drop-shadow(0 0 6px #ffb300);
+        }
+/* Clase para botón activo */
+        .activo {
+          background-color: #ff4500;
+          color: white;
+          box-shadow: 0 0 10px #ff4500aa;
+        }
+
+        .boton-direccion, .boton-stop {
+          font-size: 100px;
+          padding: 12px 20px;
+          margin: 6px;
+          background-color: rgba(0, 0, 0, 0.6);
+          border: 2px solid #ffbf00;
+          color: #ffd500;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: all 0.2s ease;
+        }
+
+        .boton-direccion:hover, .boton-stop:hover {
+          background-color: #ffbf00;
+          color: black;
+        }
+/* CONTENEDOR DEL PANEL DE BOTONES */
+/*.controles {
+    position: absolute;
+    top: 450px;           /* Mueve verticalmente según pantalla */
+    /*left: 1350px;           /* Mueve horizontalmente */
+    /*display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #ffb300;
+    box-shadow: 0 0 20px #ff8c00;*/
+/*}/*
+/* ---- CONTROLES MANUALES (CAJA FLOTANTE) ---- */
+.controles-manuales {
+    position: absolute;  /* Cambia a fixed si lo quieres siempre flotante -absolute */
+    top: 530px;        /* AJUSTA la posición según tu diseño */
+    right: 60px;      /* AJUSTA la posición */
+    z-index: 2;
+    background: rgba(0,0,0,0.15);
+    border: 4px solid #ffb300;
+    border-radius: 20px;
+    padding: 2px;
+    box-shadow: 0 0 20px #ffb30090;
+}
+
+.control-grid {
+    display: grid;
+    grid-template-columns: 65px 65px 65px;
+    grid-template-rows: 65px 65px 65px;
+    gap: 13px;
+    justify-items: center;
+    align-items: center;
+}
+
+.boton-direccion, .boton-stop {
+    width: 65px;
+    height: 65px;
+    background: rgba(0,0,0,0.82);
+    border: 3px solid #ffb300;
+    border-radius: 16px;
+    font-size: 2em;
+    color: #ffd500;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.boton-stop {
+    background: #ff2323;
+    color: #fff;
+    border-color: #fff;
+    font-size: 2.1em;
+}
+
+.boton-direccion:hover, .boton-stop:hover {
+    background: #ffb300;
+    color: #000;
+}
+
+.activo {
+    background: #ff4500 !important;
+    color: #fff !important;
+    box-shadow: 0 0 18px #ffb300c1;
+}
+/*----------------Botones de control------------------*/
+.botones-extra {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 18px;
+    top: 40px;        /* AJUSTA la posición según tu diseño */
+    right: 60px; 
+}
+
+.boton-extra {
+    font-size: 18px;
+    padding: 15px 32px;
+    border-radius: 14px;
+    border: 2px solid #ffd500;
+    background: rgba(20, 20, 20, 0.85);
+    color: #ffd500;
+    font-family: 'Orbitron', Arial, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 8px #ff8c00bb;
+    transition: all 0.2s;
+}
+.boton-extra:hover {
+    background: #ffd500;
+    color: #222;
+    border-color: #ff4500;
+}
